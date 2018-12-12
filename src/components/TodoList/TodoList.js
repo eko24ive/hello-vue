@@ -7,12 +7,25 @@ export default {
   components: {
     TodoItem
   },
-  data: function (){
-    return {}
-  },
   computed: {
-    ...mapGetters('todos', {
-      todos: 'all'
-    })
+    ...mapGetters('todos', [
+      'all',
+      'active',
+      'completed'
+    ]),
+    ...mapGetters('visibilityFilter', [
+      'visibilityFilter',
+    ]),
+    todos: function() {
+      switch (this.visibilityFilter) {
+        case 'all':
+        default:
+          return this.all;
+        case 'completed':
+          return this.completed;
+        case 'active':
+          return this.active;
+      }
+    }
   }
 }

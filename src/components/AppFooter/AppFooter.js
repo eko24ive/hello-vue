@@ -27,6 +27,9 @@ export default {
   methods: {
     ...mapActions('todos', [
       'clearCompleted'
+    ]),
+    ...mapActions('visibilityFilter', [
+      'setVisibilityFilter'
     ])
   }
 }
