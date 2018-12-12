@@ -1,13 +1,13 @@
-<template >
+<template>
   <div class="app-footer" v-if="all.length">
     <div class="items-left">
       {{left}} items left
     </div>
-    <div class="filter" >
+    <div class="filter">
       <button v-for="filter in filters" v-bind:key="filter" class="filter-button">{{filter}}</button>
     </div>
     <div class="clear-completed">
-      <button class="hidden" @click="clearCompleted">Clear completed</button>
+      <button v-bind:class="{ hidden: !showClearButton }" @click="clearCompleted">Clear completed</button>
     </div>
   </div>
 </template>
