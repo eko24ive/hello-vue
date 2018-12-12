@@ -1,6 +1,6 @@
 <template>
   <div class="todo-item">
-    <input type="checkbox" v-model="todo.done" @click="removeTodo(todo.id)">
+    <input type="checkbox" v-model="todo.done" @click="toggleTodo(todo.id)">
     <div class="todo-text-input-wrapper" @dblclick="setEdting(true)">
       <span class="text" v-if="!editing">
         {{todo.text}}
