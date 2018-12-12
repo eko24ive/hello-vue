@@ -47,10 +47,14 @@ const mutations = {
 
 const actions = {
   addTodo({ state, commit }, todo) {
-    commit('addTodo', {
-      ...todo,
-      id: state.todos.length
-    });
+    if(todo !== '') {
+      commit('addTodo', {
+        text: todo,
+        done: false,
+        id: state.todos.length
+      });
+    }
+
   },
   removeTodo({ commit }, id) {
     commit('removeTodo', id)

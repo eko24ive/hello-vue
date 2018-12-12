@@ -22,6 +22,9 @@ const router = new VueRouter({
 new Vue({
   render: h => h(App),
   store,
-  router
+  router,
+  created() {
+    this.$store.dispatch('fetchLocalStorage')
+  }
 })
 .$mount('#app')
