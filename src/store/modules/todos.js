@@ -27,6 +27,21 @@ const mutations = {
   },
   clearCompleted(state) {
     state.todos = state.todos.filter(todo => !todo.done)
+  },
+  editTodo(state, {text, id}) {
+    state.todos = state.todos.map(todo => {
+      if(todo.id === id) {
+        const {done, id} = todo;
+
+        return {
+          text,
+          done,
+          id,
+        }
+      }
+
+      return todo;
+    })
   }
 };
 
@@ -45,6 +60,9 @@ const actions = {
   },
   clearCompleted({commit}) {
     commit('clearCompleted')
+  },
+  editTodo({commit}, {text, id}) {
+    commit('editTodo', {text, id});
   }
 };
 

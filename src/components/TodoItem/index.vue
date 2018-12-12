@@ -1,10 +1,13 @@
 <template>
   <div class="todo-item">
-    <input type="checkbox" v-model="todo.done" v-on:click="handleCheckbox">
-    <div class="todo-text">
-      {{todo.text}}
+    <input type="checkbox" v-model="todo.done" @click="removeTodo(todo.id)">
+    <div class="todo-text-input-wrapper" @dblclick="setEdting(true)">
+      <span class="text" v-if="!editing">
+        {{todo.text}}
+      </span>
+      <input type="text" class="todo-edit" v-if="editing" :value="todo.text" @keyup.enter="editTodoHandle" @keyup.esc="setEdting(false)"/>
     </div>
-    <button v-on:click="handleRemove">x</button>
+    <button @click="removeTodo(todo.id)">x</button>
   </div>
 </template>
 

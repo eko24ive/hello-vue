@@ -2,6 +2,12 @@ import {mapActions} from 'vuex';
 
 export default {
   name: 'TodoItem',
+  data() {
+    return {
+      editing: false,
+      editedTodo: ''
+    }
+  },
   props: {
     todo: {
       type: Object
@@ -11,12 +17,17 @@ export default {
     ...mapActions('todos', [
       'removeTodo',
       'toggleTodo',
+      'editTodo'
     ]),
-    handleRemove() {
-      this.removeTodo(this.todo.id)
+    setEdting(value) {
+      this.editing = value;
     },
-    handleCheckbox() {
-      this.toggleTodo(this.todo.id);
+    editTodoHandle(e) {
+      this.editTodo({
+        text: e.target.value,
+        id: this.todo.id
+      });
+      this.editing = false;
     }
   }
 }
