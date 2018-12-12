@@ -8,6 +8,11 @@ export default {
     ]),
     handleKeypress(e) {
       if(e.keyCode === 13) {
+
+        if(e.target.value === '') {
+          return;
+        }
+
         this.addTodo({
           text: e.target.value,
           done: false
