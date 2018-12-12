@@ -3,8 +3,9 @@
     <input
       type="text"
       class="todo-input"
+      v-model="todo"
       placeholder="What needs to be done?"
-      v-on:keypress="handleKeypress"
+      @keydown.enter="createTodo(todo)"
     />
   </div>
 </template>

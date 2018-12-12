@@ -50,16 +50,13 @@
   flex: 1;
 }
 
-.hidden {
+.clear-completed-button.hidden {
   opacity: 0;
-};
+}
 
 .clear-completed-button {
   margin: 0;
   border: 0;
   background: none;
-};
-
-.clear-completed-button:hover {
-  text-decoration: underline;
+  cursor: pointer;
 };
