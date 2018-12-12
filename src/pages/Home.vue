@@ -1,17 +1,19 @@
 <template>
     <div>
-      This is home page
-      <TodoInput/>
+      <todo-input/>
+      <todos-list/>
     </div>
 </template>
 
 <script>
   import TodoInput from '../components/TodoInput.vue';
+  import TodosList from '../components/TodosList.vue';
 
   export default {
     name: 'Home',
     components: {
-      TodoInput
+      TodoInput,
+      TodosList
     }
   }
 </script>
