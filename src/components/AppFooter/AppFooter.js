@@ -17,6 +17,9 @@ export default {
       'active',
       'completed'
     ]),
+    ...mapGetters('visibilityFilter', [
+      'visibilityFilter'
+    ]),
     left() {
       return this.active.length
     },

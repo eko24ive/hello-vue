@@ -20,12 +20,13 @@
   margin: 0 5px;
 }
 
-button {
+.filter-button {
   cursor: pointer;
+  outline: 0;
 }
 
 .filter-button:hover, .filter-button.active {
-  border-color: 1px solid rgba(250, 128, 114);
+  border-color: rgba(250, 128, 114);
 }
 
 .filter-button:first-child {
@@ -35,19 +36,6 @@ button {
 .filter-button:last-child {
   margin-right: 0;
 };
-
-.clear-completed-button {
-  margin: 0;
-  border: 0;
-};
-
-.clear-completed-button:hover {
-  text-decoration: underline;
-};
-
-.hidden {
-  opacity: 0;
-}
 
 .todo-list {
   margin-top: 15px;
@@ -61,3 +49,17 @@ button {
 .todo-text {
   flex: 1;
 }
+
+.hidden {
+  opacity: 0;
+};
+
+.clear-completed-button {
+  margin: 0;
+  border: 0;
+  background: none;
+};
+
+.clear-completed-button:hover {
+  text-decoration: underline;
+};
