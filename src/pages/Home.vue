@@ -1,21 +1,21 @@
 <template>
     <div>
       <todo-input/>
-      <todos-list/>
+      <TodoList/>
       <app-footer/>
     </div>
 </template>
 
 <script>
-  import TodoInput from '../components/TodoInput.vue';
-  import TodosList from '../components/TodosList.vue';
-  import AppFooter from '../components/AppFooter.vue';
+  import TodoInput from '../components/TodoInput';
+  import TodoList from '../components/TodoList';
+  import AppFooter from '../components/AppFooter';
 
   export default {
     name: 'Home',
     components: {
       TodoInput,
-      TodosList,
+      TodoList,
       AppFooter
     }
   }

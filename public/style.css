@@ -1,0 +1,63 @@
+.todo-input {
+  width: 100%;
+  font-size: 24px;
+  padding: 5px;
+  border: 0;
+  box-shadow: 2px -2px 8px 1px rgba(0, 0, 0, 0.13);
+}
+
+
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.filter-button {
+  border: 1px solid rgba(250, 128, 114, 0.39);
+  border-radius: 3px;
+  background: none;
+  margin: 0 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.filter-button:hover, .filter-button.active {
+  border-color: 1px solid rgba(250, 128, 114);
+}
+
+.filter-button:first-child {
+  margin-left: 0;
+};
+
+.filter-button:last-child {
+  margin-right: 0;
+};
+
+.clear-completed-button {
+  margin: 0;
+  border: 0;
+};
+
+.clear-completed-button:hover {
+  text-decoration: underline;
+};
+
+.hidden {
+  opacity: 0;
+}
+
+.todo-list {
+  margin-top: 15px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-text {
+  flex: 1;
+}
