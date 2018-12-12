@@ -10,6 +10,20 @@ const mutations = {
     const todoIndex = state.todos.findIndex(todo => todo.id === id);
 
     state.todos = [...state.todos.slice(0, todoIndex), ...state.todos.slice(todoIndex + 1)]
+  },
+  toggleTodo(state, id) {
+    state.todos = state.todos.map(todo => {
+      if (todo.id === id) {
+        const {done, ...rest} = todo;
+
+        return {
+          done: !done,
+          ...rest
+        };
+      }
+
+      return todo;
+    })
   }
 };
 
@@ -22,7 +36,10 @@ const actions = {
   },
   removeTodo({ commit }, id) {
     commit('removeTodo', id)
-  }
+  },
+  toggleTodo({ commit }, id) {
+    commit('toggleTodo', id)
+  },
 };
 
 const getters = {
