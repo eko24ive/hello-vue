@@ -7,13 +7,13 @@
       <button v-for="filter in filters" v-bind:key="filter" class="filter-button">{{filter}}</button>
     </div>
     <div class="clear-completed">
-      <button class="hidden">Clear completed</button>
+      <button class="hidden" @click="clearCompleted">Clear completed</button>
     </div>
   </div>
 </template>
 
 <script>
-  import {mapGetters} from 'vuex';
+  import {mapGetters, mapActions} from 'vuex';
 
   export default {
     name: 'AppFooter',
@@ -38,6 +38,11 @@
       showClearButton() {
         return this.completed.length > 0
       }
+    },
+    methods: {
+      ...mapActions('todos', [
+        'clearCompleted'
+      ])
     }
   }
 </script>

@@ -24,6 +24,9 @@ const mutations = {
 
       return todo;
     })
+  },
+  clearCompleted(state) {
+    state.todos = state.todos.filter(todo => !todo.done)
   }
 };
 
@@ -40,6 +43,9 @@ const actions = {
   toggleTodo({ commit }, id) {
     commit('toggleTodo', id)
   },
+  clearCompleted({commit}) {
+    commit('clearCompleted')
+  }
 };
 
 const getters = {
