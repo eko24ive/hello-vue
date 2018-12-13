@@ -4,7 +4,15 @@
       {{left}} items left
     </div>
     <div class="filter">
-      <button v-for="(filter, i) in filters" :key="i" class="filter-button" @click="setVisibilityFilter(filter)" :class="{ 'active': filter === visibilityFilter }">{{filter}}</button>
+      <button
+        class="filter-button"
+        v-for="(filter, i) in filters"
+        :key="i"
+        :class="{ 'active': filter === visibilityFilter }"
+        @click="setVisibilityFilter(filter)"
+      >
+        {{filter}}
+      </button>
     </div>
     <div class="clear-completed">
       <button class="clear-completed-button" :class="{ 'hidden': !showClearButton }" @click="clearCompleted">Clear completed</button>
